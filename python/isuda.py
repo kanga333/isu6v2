@@ -17,7 +17,7 @@ app = Flask(__name__, static_folder = str(static_folder), static_url_path='')
 app.secret_key = 'tonymoris'
 
 _config = {
-    'db_host':       os.environ.get('ISUDA_DB_HOST', 'localhost'),
+    'db_host':       os.environ.get('ISUDA_DB_HOST', '127.0.0.1'),
     'db_port':       int(os.environ.get('ISUDA_DB_PORT', '3306')),
     'db_user':       os.environ.get('ISUDA_DB_USER', 'root'),
     'db_password':   os.environ.get('ISUDA_DB_PASSWORD', ''),

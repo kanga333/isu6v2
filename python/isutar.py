@@ -11,7 +11,7 @@ def dbh():
         return request.db
     else:
         request.db = MySQLdb.connect(**{
-            'host': os.environ.get('ISUTAR_DB_HOST', 'localhost'),
+            'host': os.environ.get('ISUTAR_DB_HOST', '127.0.0.1'),
             'port': int(os.environ.get('ISUTAR_DB_PORT', '3306')),
             'user': os.environ.get('ISUTAR_DB_USER', 'root'),
             'passwd': os.environ.get('ISUTAR_DB_PASSWORD', ''),
