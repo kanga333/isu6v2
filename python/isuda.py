@@ -227,7 +227,7 @@ def htmlify(content):
         return ''
 
     cur = dbh().cursor()
-    cur.execute('SELECT * FROM entry ORDER BY CHARACTER_LENGTH(keyword) DESC')
+    cur.execute('SELECT keyword FROM entry')
     keywords = cur.fetchall()
     keyword_re = re.compile("(%s)" % '|'.join([ re.escape(k['keyword']) for k in keywords]))
     kw2sha = {}
